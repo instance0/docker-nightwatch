@@ -10,7 +10,9 @@ apt-get -y install libnss3-dev unzip xvfb libxi6 libgconf-2-4
 apt-get -y install default-jdk
 apt-get -y install google-chrome-stable
 
-wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+
+VERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE_73)
+wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 
 mv chromedriver /usr/bin/chromedriver
