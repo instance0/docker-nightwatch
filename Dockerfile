@@ -16,4 +16,9 @@ RUN \
         google-chrome-stable \
         firefox-esr
 
+RUN \
+  curl https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip -o bslocal.zip && \
+  unzip bslocal.zip && \
+  mv BrowserStackLocal /usr/local/bin && \
+  rm bslocal.zip
 RUN npm config set scripts-prepend-node-path true
